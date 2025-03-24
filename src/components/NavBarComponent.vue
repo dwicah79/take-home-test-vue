@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar bg-base-100 shadow-sm md:px-56 font-semibold">
+  <div class="navbar bg-base-100 shadow-sm md:px-32 font-semibold relative z-20">
     <div class="flex-1">
       <router-link to="/">
         <img src="../assets/images/logo.png" class="w-24" alt="" />
@@ -10,17 +10,17 @@
         <li>
           <details>
             <summary>Our Services</summary>
-            <ul class="bg-base-100 rounded-t-none p-2 w-[32rem] grid grid-cols-2 gap-4">
+            <ul class="bg-base-100 rounded-t-none p-2 w-[25rem] grid grid-cols-2 gap-2">
               <div>
                 <li class="menu-title">
                   <router-link
                     to="/it-outsourcing"
-                    class="text-secondary-100 text-xl hover:text-primary-100 hover:cursor-pointer font-bold"
+                    class="text-secondary-100 text-md hover:text-primary-100 hover:cursor-pointer font-bold"
                   >
                     IT Outsourcing
                   </router-link>
                 </li>
-                <ol class="list-disc pl-10 text-black">
+                <ol class="list-disc pl-10 text-black text-xs">
                   <li class="list-item">
                     <router-link
                       to="/independent-staff-augmentation"
@@ -51,12 +51,12 @@
                 <li class="menu-title">
                   <router-link
                     to="/digital-transformation"
-                    class="font-bold text-secondary-100 text-xl hover:text-primary-100 hover:cursor-pointer"
+                    class="font-bold text-secondary-100 text-md hover:text-primary-100 hover:cursor-pointer"
                   >
                     Digital Transformation
                   </router-link>
                 </li>
-                <ol class="list-disc pl-10">
+                <ol class="list-disc pl-10 text-xs">
                   <li class="list-item">
                     <router-link to="/digitisation" class="hover:bg-white hover:text-primary-100">
                       Digitisation
