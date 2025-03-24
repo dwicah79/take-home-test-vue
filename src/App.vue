@@ -6,7 +6,9 @@ import NavBarComponent from './components/NavBarComponent.vue'
 <template>
   <div id="app">
     <header>
-      <NavBarComponent />
+      <div class="fixed w-full z-50 top-0">
+        <NavBarComponent />
+      </div>
     </header>
     <router-view />
   </div>
