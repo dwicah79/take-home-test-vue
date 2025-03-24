@@ -4,7 +4,7 @@
       class="container relative mx-auto flex flex-col md:flex-row justify-center items-center gap-10 px-6 md:px-12 md:pt-10 md:pb-40 z-10"
     >
       <div
-        class="absolute w-[100px] h-[100px] bg-primary-20 -top-8 -left-0 md:w-[180px] md:h-[180px] md:top-5 md:left-24 rounded-full"
+        class="absolute w-[100px] h-[100px] bg-primary-20 -top-8 -left-0 md:w-[180px] md:h-[180px] lg:top-5 lg:left-24 rounded-full"
       ></div>
       <div class="text-left max-w-lg">
         <p class="text-primary-100 font-semibold text-lg md:text-2xl">
@@ -28,18 +28,18 @@
         <img
           src="../assets/images/hero1.png"
           alt="Consulting"
-          class="md:rounded-tl-[5em] rounded-lg shadow-md"
+          class="md:rounded-tl-[2em] lg:rounded-tl-[5em] rounded-lg shadow-md"
         />
         <img src="../assets/images/hero2.png" alt="Tech Analysis" class="shadow-md" />
         <img
           src="../assets/images/hero3.png"
           alt="Coding"
-          class="md:rounded-bl-[5em] rounded-lg shadow-md"
+          class="md:rounded-bl-[2em] lg:rounded-bl-[5em] rounded-lg shadow-md"
         />
         <img
           src="../assets/images/hero4.png"
           alt="Teamwork"
-          class="md:rounded-br-[5em] rounded-lg shadow-md"
+          class="md:rounded-br-[2em] lg:rounded-br-[5em] rounded-lg shadow-md"
         />
       </div>
     </div>
