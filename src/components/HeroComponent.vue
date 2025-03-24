@@ -1,5 +1,5 @@
 <template>
-  <section class="hero flex justify-center bg-gray-100 pt-10">
+  <section class="flex justify-center bg-gray-100 pt-10">
     <div
       class="container relative mx-auto flex flex-col md:flex-row justify-center items-center gap-10 px-6 md:px-12 md:pt-10 md:pb-40 z-10"
     >
@@ -25,10 +25,22 @@
         </router-link>
       </div>
       <div class="grid grid-cols-2 gap-4 max-w-2xl">
-        <img src="../assets/images/hero1.png" alt="Consulting" class="rounded-tl-[5em] shadow-md" />
+        <img
+          src="../assets/images/hero1.png"
+          alt="Consulting"
+          class="md:rounded-tl-[5em] rounded-lg shadow-md"
+        />
         <img src="../assets/images/hero2.png" alt="Tech Analysis" class="shadow-md" />
-        <img src="../assets/images/hero3.png" alt="Coding" class="rounded-bl-[5em] shadow-md" />
-        <img src="../assets/images/hero4.png" alt="Teamwork" class="rounded-br-[5em] shadow-md" />
+        <img
+          src="../assets/images/hero3.png"
+          alt="Coding"
+          class="md:rounded-bl-[5em] rounded-lg shadow-md"
+        />
+        <img
+          src="../assets/images/hero4.png"
+          alt="Teamwork"
+          class="md:rounded-br-[5em] rounded-lg shadow-md"
+        />
       </div>
     </div>
   </section>
@@ -41,9 +53,3 @@ import { storeToRefs } from 'pinia'
 const languageStore = useLanguageStore()
 const { currentTranslations } = storeToRefs(languageStore)
 </script>
-
-<style scoped>
-.hero {
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
-}
-</style>
