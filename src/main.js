@@ -5,6 +5,13 @@ import router from './router'
 import { useLanguageStore } from './stores/language'
 import './assets/main.css'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faQuestion } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faArrowRight, faQuestion)
+
 const pinia = createPinia()
 const app = createApp(App)
 
