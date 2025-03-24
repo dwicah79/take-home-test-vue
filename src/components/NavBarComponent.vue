@@ -8,9 +8,11 @@
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1 font-poppins">
         <li>
-          <details>
+          <details class="relative">
             <summary>{{ currentTranslations.services }}</summary>
-            <ul class="bg-base-100 rounded-t-none p-2 w-[25rem] grid grid-cols-2 gap-2">
+            <ul
+              class="bg-base-100 rounded-xl p-2 w-[28rem] grid grid-cols-2 gap-5 absolute top-11 -left-10"
+            >
               <div>
                 <li class="menu-title">
                   <router-link
@@ -24,7 +26,7 @@
                   <li class="list-item">
                     <router-link
                       to="/independent-staff-augmentation"
-                      class="hover:bg-white hover:text-primary-100"
+                      class="hover:bg-white hover:text-primary-100 whitespace-nowrap"
                     >
                       {{ currentTranslations.independentStaff }}
                     </router-link>
@@ -32,19 +34,30 @@
                   <li class="list-item">
                     <router-link
                       to="/team-augmentation"
-                      class="hover:bg-white hover:text-primary-100"
+                      class="hover:bg-white hover:text-primary-100 whitespace-nowrap"
                     >
                       {{ currentTranslations.teamAugmentation }}
                     </router-link>
                   </li>
-                  <li class="list-item">
-                    <router-link
-                      to="/it-managed-services"
-                      class="hover:bg-white hover:text-primary-100"
-                    >
-                      {{ currentTranslations.itManagedServices }}
-                    </router-link>
-                  </li>
+
+                  <ol class="list-item">
+                    <li>
+                      <router-link
+                        to="/it-managed-services"
+                        class="hover:bg-white hover:text-primary-100 whitespace-nowrap text-xs"
+                      >
+                        {{ currentTranslations.itManagedServices }}
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link
+                        to="/it-managed-services"
+                        class="hover:bg-white hover:text-primary-100 whitespace-nowrap text-xs"
+                      >
+                        {{ currentTranslations.softwareDevelopment }}
+                      </router-link>
+                    </li>
+                  </ol>
                 </ol>
               </div>
               <div>
