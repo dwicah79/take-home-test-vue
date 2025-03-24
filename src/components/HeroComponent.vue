@@ -1,5 +1,5 @@
 <template>
-  <section class="flex justify-center bg-gray-100 pt-10">
+  <section class="flex justify-center bg-gray-100 pt-28">
     <div
       class="container relative mx-auto flex flex-col md:flex-row justify-center items-center gap-10 px-6 md:px-12 md:pt-10 md:pb-40 z-10"
     >
