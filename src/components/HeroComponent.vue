@@ -7,20 +7,21 @@
         class="absolute w-[100px] h-[100px] bg-primary-20 -top-8 -left-0 md:w-[180px] md:h-[180px] md:top-5 md:left-24 rounded-full"
       ></div>
       <div class="text-left max-w-lg">
-        <p class="text-red-500 font-semibold text-lg md:text-2xl">We Are Here</p>
+        <p class="text-primary-100 font-semibold text-lg md:text-2xl">
+          {{ currentTranslations.weAreHere }}
+        </p>
         <h1 class="text-4xl md:text-5xl font-semibold text-gray-900 leading-tight">
-          IT Consultant & <br class="hidden md:inline" />
-          Outsourcing
+          {{ currentTranslations.itConsulting }} <br class="hidden md:inline" />
+          {{ currentTranslations.outsourcing }}
         </h1>
         <p class="text-gray-600 text-lg mt-4">
-          We believe that technology is for every business. From roadside stall business to publicly
-          listed business. Elevate your business with technology.
+          {{ currentTranslations.techForBusiness }}
         </p>
         <router-link
           to="/contact-us"
-          class="mt-6 inline-block bg-red-500 hover:bg-red-600 text-white text-lg font-medium py-3 px-6 rounded-lg shadow-md transition-transform duration-300 transform hover:-translate-y-1"
+          class="mt-6 inline-block bg-primary-100 hover:bg-primary-80 text-white text-lg font-medium py-3 px-6 rounded-lg shadow-md transition-transform duration-300 transform hover:-translate-y-1"
         >
-          Contact Us
+          {{ currentTranslations.contactUs }}
         </router-link>
       </div>
       <div class="grid grid-cols-2 gap-4 max-w-2xl">
@@ -33,4 +34,16 @@
   </section>
 </template>
 
-<style scoped></style>
+<script setup>
+import { useLanguageStore } from '../stores/language'
+import { storeToRefs } from 'pinia'
+
+const languageStore = useLanguageStore()
+const { currentTranslations } = storeToRefs(languageStore)
+</script>
+
+<style scoped>
+.hero {
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+}
+</style>
