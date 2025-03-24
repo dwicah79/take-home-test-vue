@@ -9,7 +9,7 @@
       <ul class="menu menu-horizontal px-1 font-poppins">
         <li>
           <details>
-            <summary>Our Services</summary>
+            <summary>{{ currentTranslations.services }}</summary>
             <ul class="bg-base-100 rounded-t-none p-2 w-[25rem] grid grid-cols-2 gap-2">
               <div>
                 <li class="menu-title">
@@ -17,7 +17,7 @@
                     to="/it-outsourcing"
                     class="text-secondary-100 text-md hover:text-primary-100 hover:cursor-pointer font-bold"
                   >
-                    IT Outsourcing
+                    {{ currentTranslations.itOutsourcing }}
                   </router-link>
                 </li>
                 <ol class="list-disc pl-10 text-black text-xs">
@@ -26,7 +26,7 @@
                       to="/independent-staff-augmentation"
                       class="hover:bg-white hover:text-primary-100"
                     >
-                      Independent Staff Augmentation
+                      {{ currentTranslations.independentStaff }}
                     </router-link>
                   </li>
                   <li class="list-item">
@@ -34,7 +34,7 @@
                       to="/team-augmentation"
                       class="hover:bg-white hover:text-primary-100"
                     >
-                      Team Augmentation
+                      {{ currentTranslations.teamAugmentation }}
                     </router-link>
                   </li>
                   <li class="list-item">
@@ -42,7 +42,7 @@
                       to="/it-managed-services"
                       class="hover:bg-white hover:text-primary-100"
                     >
-                      IT Managed Services Software Development
+                      {{ currentTranslations.itManagedServices }}
                     </router-link>
                   </li>
                 </ol>
@@ -53,18 +53,18 @@
                     to="/digital-transformation"
                     class="font-bold text-secondary-100 text-md hover:text-primary-100 hover:cursor-pointer"
                   >
-                    Digital Transformation
+                    {{ currentTranslations.digitalTransformation }}
                   </router-link>
                 </li>
                 <ol class="list-disc pl-10 text-xs">
                   <li class="list-item">
                     <router-link to="/digitisation" class="hover:bg-white hover:text-primary-100">
-                      Digitisation
+                      {{ currentTranslations.digitisation }}
                     </router-link>
                   </li>
                   <li class="list-item">
                     <router-link to="/digitalisation" class="hover:bg-white hover:text-primary-100">
-                      Digitalisation
+                      {{ currentTranslations.digitalisation }}
                     </router-link>
                   </li>
                 </ol>
@@ -74,14 +74,14 @@
         </li>
         <li>
           <details>
-            <summary>About</summary>
+            <summary>{{ currentTranslations.about }}</summary>
             <ul class="bg-base-100 rounded-t-none px-5 w-36">
               <li>
                 <router-link
                   to="/about-mgs"
                   class="bg-white hover:text-primary-100 text-secondary-100"
                 >
-                  About mgs
+                  {{ currentTranslations.aboutMgs }}
                 </router-link>
               </li>
               <li>
@@ -89,31 +89,35 @@
                   to="/case-study"
                   class="bg-white hover:text-primary-100 text-secondary-100"
                 >
-                  Case Study
+                  {{ currentTranslations.caseStudy }}
                 </router-link>
               </li>
               <li>
                 <router-link to="/blog" class="bg-white hover:text-primary-100 text-secondary-100">
-                  Blog
+                  {{ currentTranslations.blog }}
                 </router-link>
               </li>
             </ul>
           </details>
         </li>
         <li>
-          <router-link to="/career" class="hover:text-primary-100"> Career </router-link>
+          <router-link to="/career" class="hover:text-primary-100">
+            {{ currentTranslations.career }}
+          </router-link>
         </li>
         <li>
           <details>
-            <summary>EN</summary>
+            <summary>{{ currentLanguage }}</summary>
             <ul class="bg-base-100 rounded-t-none p-2">
               <li>
-                <router-link to="/en" class="hover:text-primary-100"> English </router-link>
+                <a @click="setLanguage('en')" class="hover:text-primary-100 cursor-pointer">
+                  {{ translations.en.english }}
+                </a>
               </li>
               <li>
-                <router-link to="/id" class="hover:text-primary-100">
-                  Bahasa Indonesia
-                </router-link>
+                <a @click="setLanguage('id')" class="hover:text-primary-100 cursor-pointer">
+                  {{ translations.id.indonesian }}
+                </a>
               </li>
             </ul>
           </details>
@@ -122,6 +126,18 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { useLanguageStore } from '../stores/language'
+import { storeToRefs } from 'pinia'
+
+const languageStore = useLanguageStore()
+const { currentLanguage, currentTranslations, translations } = storeToRefs(languageStore)
+
+const setLanguage = (lang) => {
+  languageStore.setLanguage(lang)
+}
+</script>
 
 <style scoped>
 .router-link-exact-active {
