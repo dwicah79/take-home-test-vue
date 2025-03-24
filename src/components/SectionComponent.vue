@@ -7,7 +7,7 @@
       <h1 class="text-center text-primary-100 text-xl md:text-2xl">{{ title }}</h1>
       <h1 class="text-center text-2xl text-secondary-100 md:text-5xl">{{ subtitle }}</h1>
 
-      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 px-5 md:px-36">
         <slot></slot>
       </div>
     </div>
