@@ -131,7 +131,7 @@
           <details ref="languageDetails" @click.stop="toggleDropdown('language')">
             <summary>{{ currentLanguage }}</summary>
             <ul
-              v-show="openDropdown === 'language'"
+              v-if="openDropdown === 'language'"
               class="bg-base-100 rounded-t-none p-2"
               @click.stop
             >
@@ -356,26 +356,18 @@ const mobileDropdowns = ref({
 })
 
 const toggleDropdown = (dropdown) => {
-  if (openDropdown.value === dropdown) {
-    openDropdown.value = null
-  } else {
-    openDropdown.value = dropdown
+  openDropdown.value = openDropdown.value === dropdown ? null : dropdown
+}
 
-    if (dropdown !== 'services' && servicesDetails.value) {
-      servicesDetails.value.open = false
-    }
-    if (dropdown !== 'about' && aboutDetails.value) {
-      aboutDetails.value.open = false
-    }
-    if (dropdown !== 'language' && languageDetails.value) {
-      languageDetails.value.open = false
-    }
-  }
+const isLanguageDropdownOpen = ref(false)
+
+const toggleLanguageDropdown = () => {
+  isLanguageDropdownOpen.value = !isLanguageDropdownOpen.value
 }
 
 const setLanguage = (lang) => {
   languageStore.setLanguage(lang)
-  openDropdown.value = null
+  isLanguageDropdownOpen.value = false
 }
 
 const setLanguageMobile = (lang) => {
