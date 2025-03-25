@@ -5,14 +5,20 @@ import SectionComponent from '@/components/SectionComponent.vue'
 import CardComponent from '@/components/CardComponent.vue'
 import { useServicesStore } from '@/stores/service'
 import { useLanguageStore } from '@/stores/language'
-import { watch } from 'vue'
+import { onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import CardSkeleton from '@/components/CardSkeletonComponent.vue'
+import { useWhiesStore } from '@/stores/Whies'
 
 const servicesStore = useServicesStore()
 const languageStore = useLanguageStore()
 const { currentLanguage, currentTranslations } = storeToRefs(languageStore)
 
+const whiesStore = useWhiesStore()
+
+onMounted(async () => {
+  await whiesStore.fetchWhies()
+})
 watch(
   currentLanguage,
   (newLang) => {
@@ -34,27 +40,34 @@ watch(
       backgroundColor="bg-white"
       imagePosition="top-left"
     >
-      <!-- <template v-if="servicesStore.loading">
-        <CardSkeleton />
-      </template>
-
-      <template v-else-if="servicesStore.error">
-        <div class="text-red-500 text-center py-8">Error: {{ servicesStore.error }}</div>
-      </template>
-
-      <template v-else-if="!servicesStore.hasServices">
-        <div class="text-center py-12 text-gray-500">No services available in this language</div>
-      </template>
-
-      <template v-else>
-      </template> -->
       <CardComponent
         v-for="service in servicesStore.services"
         :key="service.id"
         :title="service.title"
         :description="service.description"
+        :has-hover-effect="true"
         :iconSrc="service.iconSrc"
         :link="service.link"
+        line-type="double"
+        line-color="bg-primary-100"
+      />
+    </SectionComponent>
+
+    <SectionComponent
+      :title="currentTranslations.whymgs || 'Why mgs ?'"
+      :subtitle="currentTranslations.reason || 'Reason whymgs is the right place'"
+      :Image="false"
+      image-src="false"
+      backgroundColor="bg-gray-100"
+    >
+      <CardComponent
+        v-for="item in whiesStore.whies"
+        :key="item.id"
+        :title="item.title"
+        :description="item.description"
+        :has-hover-effect="false"
+        line-type="gradient"
+        :gradient-colors="['from-primary-100', 'via-primary-20', 'to-white']"
       />
     </SectionComponent>
   </main>
