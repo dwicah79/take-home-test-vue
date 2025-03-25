@@ -12,6 +12,7 @@ import { useWhiesStore } from '@/stores/Whies'
 import FooterComponent from '@/components/FooterComponent.vue'
 import AboutComponent from '@/components/AboutComponent.vue'
 import PurposeComponent from '@/components/PurposeComponent.vue'
+import TaglineComponent from '@/components/TaglineComponent.vue'
 
 const servicesStore = useServicesStore()
 const languageStore = useLanguageStore()
@@ -91,6 +92,7 @@ watch(
     </SectionComponent>
 
     <PurposeComponent />
+    <TaglineComponent />
   </main>
 
   <footer>
