@@ -3,7 +3,7 @@
     <div v-if="Image" class="absolute" :class="imagePositionClass">
       <img :src="imageSrc" alt="Sample Image" class="mt-5" />
     </div>
-    <div class="flex flex-col items-center text-center mt-10 md:mt-32 max-w-screen-lg w-full">
+    <div class="flex flex-col items-center mt-10 md:mt-32 w-full">
       <h1 class="text-center text-primary-100 text-xl md:text-2xl">{{ title }}</h1>
       <h1 class="text-center text-2xl text-secondary-100 md:text-5xl">{{ subtitle }}</h1>
 
