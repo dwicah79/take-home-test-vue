@@ -1,5 +1,8 @@
 <template>
-  <section :class="backgroundColor" class="w-full min-h-screen flex justify-center relative">
+  <section
+    :class="backgroundColor"
+    class="w-full md:min-h-screen md:pb-20 mb-10 flex justify-center relative"
+  >
     <div v-if="Image" class="absolute" :class="imagePositionClass">
       <img :src="imageSrc" alt="Sample Image" class="mt-5" />
     </div>
