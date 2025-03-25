@@ -34,7 +34,7 @@ watch(
       backgroundColor="bg-white"
       imagePosition="top-left"
     >
-      <template v-if="servicesStore.loading">
+      <!-- <template v-if="servicesStore.loading">
         <CardSkeleton />
       </template>
 
@@ -47,15 +47,15 @@ watch(
       </template>
 
       <template v-else>
-        <CardComponent
-          v-for="service in servicesStore.services"
-          :key="service.id"
-          :title="service.title"
-          :description="service.description"
-          :iconSrc="service.iconSrc"
-          :link="service.link"
-        />
-      </template>
+      </template> -->
+      <CardComponent
+        v-for="service in servicesStore.services"
+        :key="service.id"
+        :title="service.title"
+        :description="service.description"
+        :iconSrc="service.iconSrc"
+        :link="service.link"
+      />
     </SectionComponent>
   </main>
 </template>
