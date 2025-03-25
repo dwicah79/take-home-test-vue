@@ -11,6 +11,7 @@ import CardSkeleton from '@/components/CardSkeletonComponent.vue'
 import { useWhiesStore } from '@/stores/Whies'
 import FooterComponent from '@/components/FooterComponent.vue'
 import AboutComponent from '@/components/AboutComponent.vue'
+import PurposeComponent from '@/components/PurposeComponent.vue'
 
 const servicesStore = useServicesStore()
 const languageStore = useLanguageStore()
@@ -88,6 +89,8 @@ watch(
     >
       <AboutComponent />
     </SectionComponent>
+
+    <PurposeComponent />
   </main>
 
   <footer>
