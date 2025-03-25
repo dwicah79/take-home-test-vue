@@ -1,13 +1,19 @@
 <template>
-  <section :class="backgroundColor" class="w-full h-screen flex justify-center relative">
+  <section :class="backgroundColor" class="w-full min-h-screen flex justify-center relative">
     <div v-if="Image" class="absolute" :class="imagePositionClass">
       <img :src="imageSrc" alt="Sample Image" class="mt-5" />
     </div>
-    <div class="flex flex-col item-center font-semibold mt-10 md:mt-32">
+    <div class="flex flex-col items-center text-center mt-10 md:mt-32 max-w-screen-lg w-full">
       <h1 class="text-center text-primary-100 text-xl md:text-2xl">{{ title }}</h1>
       <h1 class="text-center text-2xl text-secondary-100 md:text-5xl">{{ subtitle }}</h1>
 
-      <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6 px-5 md:px-36">
+      <div
+        class="w-full mt-6 px-5 md:px-36"
+        :class="{
+          'grid grid-cols-1 lg:grid-cols-2 gap-6': useGrid,
+          'flex flex-col items-center': !useGrid,
+        }"
+      >
         <slot></slot>
       </div>
     </div>
@@ -43,6 +49,17 @@ const props = defineProps({
     default: 'top-left',
     validator: (value) =>
       ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'center'].includes(value),
+  },
+
+  useGrid: {
+    type: Boolean,
+    default: true,
+  },
+  gridCols: {
+    type: String,
+    default: 'lg:grid-cols-2',
+    validator: (value) =>
+      ['', 'md:grid-cols-2', 'lg:grid-cols-2', 'lg:grid-cols-3', 'xl:grid-cols-4'].includes(value),
   },
 })
 
