@@ -10,6 +10,7 @@ import { storeToRefs } from 'pinia'
 import CardSkeleton from '@/components/CardSkeletonComponent.vue'
 import { useWhiesStore } from '@/stores/Whies'
 import FooterComponent from '@/components/FooterComponent.vue'
+import AboutComponent from '@/components/AboutComponent.vue'
 
 const servicesStore = useServicesStore()
 const languageStore = useLanguageStore()
@@ -41,6 +42,9 @@ watch(
       imageSrc="/src/assets/images/vector.png"
       backgroundColor="bg-white"
       imagePosition="top-left"
+      :centerContent="true"
+      :useGrid="true"
+      :gridCols="('lg:grid-cols-3', 'grid-cols-1', 'md:grid-cols-2')"
     >
       <CardComponent
         v-for="service in servicesStore.services"
@@ -61,6 +65,8 @@ watch(
       :Image="false"
       image-src="false"
       backgroundColor="bg-gray-100"
+      :useGrid="true"
+      :gridCols="('lg:grid-cols-3', 'grid-cols-1')"
     >
       <CardComponent
         v-for="item in whiesStore.whies"
@@ -71,6 +77,16 @@ watch(
         line-type="gradient"
         :gradient-colors="['from-primary-100', 'via-primary-20', 'to-white']"
       />
+    </SectionComponent>
+
+    <SectionComponent
+      :Image="true"
+      imageSrc="/src/assets/images/vectorright.png"
+      backgroundColor="bg-white"
+      imagePosition="top-right"
+      :useGrid="false"
+    >
+      <AboutComponent />
     </SectionComponent>
   </main>
 
