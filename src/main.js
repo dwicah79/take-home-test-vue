@@ -8,9 +8,10 @@ import './assets/main.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { faQuestion } from '@fortawesome/free-solid-svg-icons'
+import { faInstagram, faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faArrowRight, faQuestion)
+library.add(faArrowRight, faQuestion, faInstagram, faFacebook, faTwitter, faLinkedin)
 
 const pinia = createPinia()
 const app = createApp(App)
