@@ -9,6 +9,7 @@ import { onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import CardSkeleton from '@/components/CardSkeletonComponent.vue'
 import { useWhiesStore } from '@/stores/Whies'
+import FooterComponent from '@/components/FooterComponent.vue'
 
 const servicesStore = useServicesStore()
 const languageStore = useLanguageStore()
@@ -29,9 +30,10 @@ watch(
 </script>
 
 <template>
-  <main>
+  <header>
     <HeroComponent />
-
+  </header>
+  <main>
     <SectionComponent
       :title="currentTranslations.whatWeHave || 'What we Have'"
       :subtitle="currentTranslations.services || 'Our Services'"
@@ -71,4 +73,8 @@ watch(
       />
     </SectionComponent>
   </main>
+
+  <footer>
+    <FooterComponent />
+  </footer>
 </template>
