@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 w-full flex justify-center items-center md:px-40 md:py-20 py-10">
+  <div class="bg-gray-100 w-full flex justify-center items-center md:px-40 md:py-20">
     <div class="relative w-full md:h-[26em] overflow-hidden flex justify-center items-center">
       <img
         src="../assets/images/taglineimage.png"
