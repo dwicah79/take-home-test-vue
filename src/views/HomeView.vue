@@ -13,6 +13,7 @@ import FooterComponent from '@/components/FooterComponent.vue'
 import AboutComponent from '@/components/AboutComponent.vue'
 import PurposeComponent from '@/components/PurposeComponent.vue'
 import TaglineComponent from '@/components/TaglineComponent.vue'
+import ContacUsComponent from '@/components/ContacUsComponent.vue'
 
 const servicesStore = useServicesStore()
 const languageStore = useLanguageStore()
@@ -68,7 +69,7 @@ watch(
       image-src="false"
       backgroundColor="bg-gray-100"
       :useGrid="true"
-      :gridCols="('lg:grid-cols-3', 'grid-cols-1')"
+      :gridCols="('lg:grid-cols-4', 'grid-cols-1', 'md:grid-cols-2')"
     >
       <CardComponent
         v-for="item in whiesStore.whies"
@@ -82,6 +83,8 @@ watch(
     </SectionComponent>
 
     <SectionComponent
+      title=""
+      subtitle=""
       :Image="true"
       imageSrc="/src/assets/images/vectorright.png"
       backgroundColor="bg-white"
@@ -93,6 +96,17 @@ watch(
 
     <PurposeComponent />
     <TaglineComponent />
+
+    <SectionComponent
+      title=""
+      subtitle=""
+      :Image="false"
+      imageSrc="false"
+      backgroundColor="bg-primary-20"
+      :useGrid="false"
+    >
+      <ContacUsComponent />
+    </SectionComponent>
   </main>
 
   <footer>
