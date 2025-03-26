@@ -1,7 +1,7 @@
 <template>
   <section
     :class="backgroundColor"
-    class="w-full md:min-h-screen md:pb-20 mb-10 flex justify-center relative"
+    class="w-full md:min-h-screen md:pb-20 mb-10 md:mb-0 flex justify-center relative"
   >
     <div v-if="Image" class="absolute" :class="imagePositionClass">
       <img :src="imageSrc" alt="Sample Image" class="mt-5" />
@@ -14,7 +14,7 @@
         class="w-full mt-6 px-5 md:px-36"
         :class="{
           'grid grid-cols-1 lg:grid-cols-2 gap-6': useGrid,
-          'flex flex-col items-center': !useGrid,
+          'flex flex-wrap justify-center items-center': !useGrid,
         }"
       >
         <slot></slot>
